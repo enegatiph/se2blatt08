@@ -22,8 +22,17 @@ public class BarZahlungsWerkzeugUI{
 	private JLabel _preisRest;
 
 
-	
+	/**
+	 * 
+	 * @param gesammtBetrag
+	 *        Der zuzahlende Betrag
+	 * 
+	 * @require gesamtbetrag > 0
+	 * @ensure ?
+	 */
 	public BarZahlungsWerkzeugUI( int gesammtBetrag) {
+		assert gesammtBetrag > 0 : "Vorbedingung verletzt bzgl. gesamtbetrag";
+		
 		//TODO layout
 		_dialog = new JDialog();
 		_ok = new JButton("OK");
