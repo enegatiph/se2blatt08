@@ -19,10 +19,13 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
  	BarZahlungsWerkzeugUI _ui;
 	int _gesammtBetrag;
 	
-	public BarZahlungsWerkzeug(int gesammtBetrag) 
+	public BarZahlungsWerkzeug(int gesamtBetrag) 
 	{
-		_gesammtBetrag = gesammtBetrag;
-		_ui = new BarZahlungsWerkzeugUI(gesammtBetrag);
+		_gesammtBetrag = gesamtBetrag;
+		_ui = new BarZahlungsWerkzeugUI(gesamtBetrag);
+		registriereUIAktionen();
+		_ui.setModal(true);
+		_ui.zeigeFenster();
 	}
 	
 	/**
@@ -69,7 +72,7 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 			@Override
 			public void actionPerformed(ActionEvent e) 
 			{
-				//reagiereAufAbbrechenButton();
+				reagiereAufAbbrechenButton();
 			}
 		});
 		

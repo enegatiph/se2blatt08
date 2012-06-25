@@ -40,8 +40,6 @@ public class PlatzVerkaufsWerkzeug implements SubwerkzeugBeobachter
         registriereUIAktionen();
         // Am Anfang wird keine Vorstellung angezeigt:
         setVorstellung(null);
-        //TODO move konstructor
-        _barZahlungsWerkzeug = new BarZahlungsWerkzeug(100);//dummy
         
     }
 
@@ -179,6 +177,7 @@ public class PlatzVerkaufsWerkzeug implements SubwerkzeugBeobachter
     private void verkaufePlaetze()
     {
     	//TODO mit barzahlungswerkzeug
+    	_barZahlungsWerkzeug = new BarZahlungsWerkzeug(100);
         Set<Platz> plaetze = _ui.getPlatzplan().getAusgewaehltePlaetze();
         _vorstellung.verkaufePlaetze(plaetze);
         aktualisierePlatzplan();
