@@ -1,7 +1,17 @@
 package de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.barzahlung;
 
+/**
+ * Mit diesem Werkzeug kann die Bezahlung via Bargeld erfolgen.
+ * 
+ * Dieses Werkzeug ist ein eingebettetes Subwerkzeug es benachtichtigt sein
+ * Kontextwerkzeug wenn die Barzahlung vollzogen ist.
+ *
+ */
 public class BarZahlungsWerkzeugUI{
 
+	/**
+	 * 
+	 */
 	public BarZahlungsWerkzeugUI() {
 		// TODO Auto-generated constructor stub
 	}
