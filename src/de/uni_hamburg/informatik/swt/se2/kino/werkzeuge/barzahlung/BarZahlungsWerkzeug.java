@@ -3,6 +3,8 @@ package de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.barzahlung;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
+
 import de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.BeobachtbaresSubWerkzeug;
 
 /**
@@ -102,6 +104,15 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 	 */
 	private void reagiereAufPreisEingabeAenderung()
 	{
+		int eingegebenerBertrag = Integer.parseInt(_ui.getPreisEingabe().getText());
 		
+		if(istBarZahlungMoeglich(eingegebenerBertrag) == true)
+		{
+			// ok button sichbarmachen
+		}
+		else
+		{
+			// restbetrag berechnen und anzeigen
+		}
 	}
 }
