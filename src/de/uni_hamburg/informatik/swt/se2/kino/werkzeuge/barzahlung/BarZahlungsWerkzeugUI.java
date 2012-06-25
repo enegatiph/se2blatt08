@@ -62,7 +62,8 @@ public class BarZahlungsWerkzeugUI
 
 
 	
-	public JDialog getDialog() {
+	public JDialog getDialog() 
+	{
 		return _dialog;
 	}
 
