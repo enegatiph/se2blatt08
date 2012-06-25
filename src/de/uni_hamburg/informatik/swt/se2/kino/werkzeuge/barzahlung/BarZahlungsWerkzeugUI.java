@@ -48,7 +48,7 @@ public class BarZahlungsWerkzeugUI{
 		_preisRest = new JLabel();
 
 		_dialog.setSize(300, 200);//?
-		_dialog.setTitle("Barahlung");
+		_dialog.setTitle("Barzahlung");
 		
 		_dialog.setLayout(new BorderLayout());
 		
