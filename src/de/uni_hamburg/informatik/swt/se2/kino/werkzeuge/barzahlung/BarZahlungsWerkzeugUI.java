@@ -9,11 +9,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
- * Mit diesem Werkzeug kann die Bezahlung via Bargeld erfolgen.
  * 
- * Dieses Werkzeug ist ein eingebettetes Subwerkzeug es benachtichtigt sein
- * Kontextwerkzeug wenn die Barzahlung vollzogen ist.
- *
+ * das UI des {@link BarZahlungsWerkzeugs}
  */
 public class BarZahlungsWerkzeugUI 
 {
@@ -34,7 +31,7 @@ public class BarZahlungsWerkzeugUI
 	 * @require gesamtbetrag > 0
 	 * @ensure ?
 	 */
-	public BarZahlungsWerkzeugUI( int gesammtBetrag) 
+	public BarZahlungsWerkzeugUI(int gesammtBetrag) 
 	{
 		assert gesammtBetrag > 0 : "Vorbedingung verletzt bzgl. gesamtbetrag";
 		
