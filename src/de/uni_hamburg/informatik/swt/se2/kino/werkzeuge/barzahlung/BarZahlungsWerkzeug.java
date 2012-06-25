@@ -9,7 +9,7 @@ import de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.BeobachtbaresSubWerkzeug
  * Kontextwerkzeug wenn die Barzahlung vollzogen ist.
  *
  */
-public class BarZahlungsWerkzeug  extends BeobachtbaresSubWerkzeug{
+public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 
  	BarZahlungsWerkzeugUI _ui;
 	int _gesammtBetrag;
