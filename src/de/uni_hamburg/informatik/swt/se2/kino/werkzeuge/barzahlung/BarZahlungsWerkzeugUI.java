@@ -8,6 +8,13 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+/**
+ * Mit diesem Werkzeug kann die Bezahlung via Bargeld erfolgen.
+ * 
+ * Dieses Werkzeug ist ein eingebettetes Subwerkzeug es benachtichtigt sein
+ * Kontextwerkzeug wenn die Barzahlung vollzogen ist.
+ *
+ */
 public class BarZahlungsWerkzeugUI{
 
 	private JDialog _dialog;
@@ -17,8 +24,18 @@ public class BarZahlungsWerkzeugUI{
 	private JLabel _preisGesamt;
 	private JLabel _preisRest;
 
-	
+
+	/**
+	 * 
+	 * @param gesammtBetrag
+	 *        Der zuzahlende Betrag
+	 * 
+	 * @require gesamtbetrag > 0
+	 * @ensure ?
+	 */
 	public BarZahlungsWerkzeugUI( int gesammtBetrag) {
+		assert gesammtBetrag > 0 : "Vorbedingung verletzt bzgl. gesamtbetrag";
+		
 		//TODO layout
 		
 		System.out.printf("Running UI Constructor");
