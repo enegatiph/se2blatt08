@@ -53,6 +53,7 @@ public class BarZahlungsWerkzeugUI
 		_dialog.setTitle("Barzahlung");
 		_dialog.setLayout( new BorderLayout());
 		_dialog.setSize(300, 125);
+		_dialog.setModal(true);
 		
 		//GesamtPreis
 		_northPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
@@ -76,8 +77,9 @@ public class BarZahlungsWerkzeugUI
 		_abbrechen = new JButton("Abbrechen");
 		_centerPanel.add( _ok);
 		_centerPanel.add( _abbrechen);
-
-		_dialog.setModal(true);
+		_ok.setEnabled(false);
+		
+		
 		zeigeFenster();
 		
 	}
