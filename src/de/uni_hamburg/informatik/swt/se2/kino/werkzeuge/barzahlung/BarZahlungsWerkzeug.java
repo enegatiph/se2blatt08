@@ -1,5 +1,8 @@
 package de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.barzahlung;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.BeobachtbaresSubWerkzeug;
 
 /**
@@ -40,10 +43,28 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 		}
 	}
 	
+	/**
+	 * Fügt die Funktionalität zu Folgenden UI-Elementen hinzu:
+	 * - OK-Button
+	 * - Abbrechen-Button
+	 * - PreisEingabe-TextField
+	 */
+	private void registriereUIAktionen()
+	{
+		_ui.getOkButton().addActionListener(new ActionListener() 
+		{
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				reagiereAufOkButton();
+			}
+		});
+	}
 	/* methods
 	    
 		
-		registriereUIAktionen(): void
+		
 		reagiereAufAbbrechenButton() : void
 		reagiereAufOkButton() : void
 		reagiereAufPreisEingabeAenderung() : void
