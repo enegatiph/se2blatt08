@@ -123,6 +123,7 @@ public class BarZahlungsWerkzeugUI
 	}
 	
 	//ist bereits im konstruktor => entfernen?
+	// nein...
 	public void zeigeFenster() 
 	{
 		_dialog.setVisible(true);
