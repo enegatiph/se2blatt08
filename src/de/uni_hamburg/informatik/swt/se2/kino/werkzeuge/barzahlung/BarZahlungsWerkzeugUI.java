@@ -2,6 +2,7 @@ package de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.barzahlung;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.sql.Date;
 
 
@@ -18,18 +19,17 @@ import javax.swing.JTextField;
 public class BarZahlungsWerkzeugUI 
 {
 
-	//dialog
+	//dialog & panels
 	private JDialog _dialog;
+	private JPanel _centerPanel;
+	private JPanel _northPanel;
+	
 	//buttons & co
-	private JPanel _buttonPanel;
 	private JButton _ok;
 	private JButton _abbrechen;
 	
-	//Gesamt Preis
-	private JPanel _northPanel;
+	//Preis
 	private JLabel _preisGesamt;
-
-	//TODO
 	private JTextField _preisEingabe;
 	private JLabel _preisRest;
 
@@ -40,48 +40,45 @@ public class BarZahlungsWerkzeugUI
 	 *        Der zuzahlende Betrag
 	 * 
 	 * @require gesamtbetrag > 0
-	 * @ensure ?
+	 * @ensure there is a propper window
 	 */
 	public BarZahlungsWerkzeugUI(int gesammtBetrag) 
 	{
 		assert gesammtBetrag > 0 : "Vorbedingung verletzt bzgl. gesamtbetrag";
 		
-		//TODO layout
-		//Anderes Layout?
-		
 		System.out.printf("Running UI Constructor");
 		
 		//Dialog
 		_dialog = new JDialog();
-		_dialog.setLayout( new BorderLayout());
-		_dialog.setSize(300, 200);//?
 		_dialog.setTitle("Barzahlung");
+		_dialog.setLayout( new BorderLayout());
+		_dialog.setSize(300, 125);
 		
-		//Buttons & Co.
-		_buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-		_ok = new JButton("OK");
-		_abbrechen = new JButton("Abbrechen");
-		_dialog.add(_buttonPanel, BorderLayout.SOUTH);
-		_buttonPanel.add( _ok, BorderLayout.SOUTH);
-		_buttonPanel.add( _abbrechen, BorderLayout.SOUTH);
-
-		
-		//Preiskrams
+		//GesamtPreis
 		_northPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		_preisGesamt = new JLabel( "Zu Zahlen: " + Integer.toString(gesammtBetrag) + "Euro");
-		_dialog.add( _northPanel, BorderLayout.CENTER);
+		_dialog.add( _northPanel, BorderLayout.NORTH);
 		_northPanel.add( _preisGesamt);
-		
-		//TODO
-		/*_preisEingabe = new JTextField("0");
-		_preisGesamt = new JLabel();
-		_preisRest = new JLabel();*/
 
+		//Centerpanel
+		_centerPanel = new JPanel( new GridLayout(0,2));
+		_dialog.add(_centerPanel, BorderLayout.CENTER);
 
+		//Preis Eingabe + Rest
+		_preisEingabe = new JTextField("Gegeben");
+		_preisRest = new JLabel("Rest: N/A");
+		_dialog.add(_centerPanel, BorderLayout.CENTER);
+		_centerPanel.add(_preisEingabe);
+		_centerPanel.add(_preisRest);
 		
-		
+		//Buttons & Co.
+		_ok = new JButton("OK");
+		_abbrechen = new JButton("Abbrechen");
+		_centerPanel.add( _ok);
+		_centerPanel.add( _abbrechen);
+
 		_dialog.setModal(true);
-		_dialog.setVisible(true);
+		zeigeFenster();
 		
 	}
 
@@ -122,14 +119,13 @@ public class BarZahlungsWerkzeugUI
 		return _preisRest;
 	}
 	
-	//ist bereits im konstruktor => entfernen?
-	// nein...
 	public void zeigeFenster() 
 	{
 		_dialog.setVisible(true);
 	}
 
-	/* methods
-		schliesseFenster()
-	 */
+	private void schliesseFenster()
+	{
+		_dialog.dispose();
+	}
 }

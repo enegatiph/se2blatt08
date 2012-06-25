@@ -57,7 +57,7 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 			@Override
 			public void actionPerformed(ActionEvent arg0) 
 			{
-				reagiereAufOkButton();
+				//reagiereAufOkButton();
 			}
 		});
 	}
