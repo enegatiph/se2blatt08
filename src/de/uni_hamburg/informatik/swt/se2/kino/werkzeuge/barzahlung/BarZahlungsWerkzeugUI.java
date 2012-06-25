@@ -25,9 +25,12 @@ public class BarZahlungsWerkzeugUI
 	private JButton _ok;
 	private JButton _abbrechen;
 	
-	//todo
-	private JTextField _preisEingabe;
+	//Gesamt Preis
+	private JPanel _northPanel;
 	private JLabel _preisGesamt;
+
+	//TODO
+	private JTextField _preisEingabe;
 	private JLabel _preisRest;
 
 
@@ -63,8 +66,13 @@ public class BarZahlungsWerkzeugUI
 		_buttonPanel.add( _abbrechen, BorderLayout.SOUTH);
 
 		
-		//TODO
+		//Preiskrams
+		_northPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+		_preisGesamt = new JLabel( "Zu Zahlen: " + Integer.toString(gesammtBetrag) + "Euro");
+		_dialog.add( _northPanel, BorderLayout.CENTER);
+		_northPanel.add( _preisGesamt);
 		
+		//TODO
 		/*_preisEingabe = new JTextField("0");
 		_preisGesamt = new JLabel();
 		_preisRest = new JLabel();*/
