@@ -57,7 +57,7 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 			@Override
 			public void actionPerformed(ActionEvent arg0) 
 			{
-				reagiereAufOkButton();
+				//reagiereAufOkButton();
 			}
 		});
 		
@@ -67,7 +67,7 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 			@Override
 			public void actionPerformed(ActionEvent e) 
 			{
-				reagiereAufAbbrechenButton();
+				//reagiereAufAbbrechenButton();
 			}
 		});
 		
@@ -77,7 +77,7 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 			@Override
 			public void actionPerformed(ActionEvent e) 
 			{
-				reagiereAufPreisEingabeAenderung();
+				//reagiereAufPreisEingabeAenderung();
 			}
 		});
 	}
@@ -85,10 +85,14 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 	    
 		
 		
-		reagiereAufAbbrechenButton() : void
+		 : void
 		reagiereAufOkButton() : void
 		reagiereAufPreisEingabeAenderung() : void
 	 */
 	
+	private void reagiereAufAbbrechenButton()
+	{
+		_ui.schliesseFenster();
+	}
 	
 }
