@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.sql.Date;
 
+
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -11,13 +12,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
- * Mit diesem Werkzeug kann die Bezahlung via Bargeld erfolgen.
  * 
- * Dieses Werkzeug ist ein eingebettetes Subwerkzeug es benachtichtigt sein
- * Kontextwerkzeug wenn die Barzahlung vollzogen ist.
- *
+ * das UI des {@link BarZahlungsWerkzeugs}
  */
-public class BarZahlungsWerkzeugUI{
+public class BarZahlungsWerkzeugUI 
+{
 
 	//dialog
 	private JDialog _dialog;
@@ -40,7 +39,8 @@ public class BarZahlungsWerkzeugUI{
 	 * @require gesamtbetrag > 0
 	 * @ensure ?
 	 */
-	public BarZahlungsWerkzeugUI( int gesammtBetrag) {
+	public BarZahlungsWerkzeugUI(int gesammtBetrag) 
+	{
 		assert gesammtBetrag > 0 : "Vorbedingung verletzt bzgl. gesamtbetrag";
 		
 		//TODO layout
@@ -77,34 +77,47 @@ public class BarZahlungsWerkzeugUI{
 		
 	}
 
+
 	
-	public JDialog getDialog() {
+	public JDialog getDialog() 
+	{
 		return _dialog;
 	}
 
 
-	public JButton getOkButton() {
+	public JButton getOkButton() 
+	{
 		return _ok;
 	}
 
 
-	public JButton getAbbrechenButton() {
+	public JButton getAbbrechenButton() 
+	{
 		return _abbrechen;
 	}
 
 
-	public JTextField getPreisEingabe() {
+	public JTextField getPreisEingabe() 
+	{
 		return _preisEingabe;
 	}
 
 
-	public JLabel getPreisGesamtLabel() {
+	public JLabel getPreisGesamtLabel() 
+	{
 		return _preisGesamt;
 	}
 
 
-	public JLabel getPreisRestLabel() {
+	public JLabel getPreisRestLabel() 
+	{
 		return _preisRest;
+	}
+	
+	//ist bereits im konstruktor => entfernen?
+	public void zeigeFenster() 
+	{
+		_dialog.setVisible(true);
 	}
 
 	/* methods
