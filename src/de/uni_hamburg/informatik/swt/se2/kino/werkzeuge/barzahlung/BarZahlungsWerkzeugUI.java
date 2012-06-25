@@ -1,5 +1,8 @@
 package de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.barzahlung;
 
+import java.awt.BorderLayout;
+import java.sql.Date;
+
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -36,18 +39,30 @@ public class BarZahlungsWerkzeugUI
 		assert gesammtBetrag > 0 : "Vorbedingung verletzt bzgl. gesamtbetrag";
 		
 		//TODO layout
+		
+		System.out.printf("Running UI Constructor");
+		
 		_dialog = new JDialog();
 		_ok = new JButton("OK");
 		_abbrechen = new JButton("Abbrechen");
 		_preisEingabe = new JTextField();
 		_preisGesamt = new JLabel();
 		_preisRest = new JLabel();
-	
+
+		_dialog.setSize(300, 200);//?
+		_dialog.setTitle("Barzahlung");
+		
+		_dialog.setLayout(new BorderLayout());
+		
+		
+		_dialog.setModal(true);
+		_dialog.setVisible(true);
+		
 	}
 
 
-	public JDialog getDialog() 
-	{
+	
+	public JDialog getDialog() {
 		return _dialog;
 	}
 
