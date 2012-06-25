@@ -60,6 +60,26 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 				reagiereAufOkButton();
 			}
 		});
+		
+		_ui.getAbbrechenButton().addActionListener(new ActionListener() 
+		{
+			
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				reagiereAufAbbrechenButton();
+			}
+		});
+		
+		_ui.getPreisEingabe().addActionListener(new ActionListener() 
+		{
+			
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				reagiereAufPreisEingabeAenderung();
+			}
+		});
 	}
 	/* methods
 	    
