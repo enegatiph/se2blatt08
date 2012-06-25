@@ -5,11 +5,11 @@ import de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.BeobachtbaresSubWerkzeug
 public class BarZahlungsWerkzeug  extends BeobachtbaresSubWerkzeug{
 
  	BarZahlungsWerkzeugUI _ui;
-	int _preis;
+	int _gesammtBetrag;
 	
-	public BarZahlungsWerkzeug(int preis) {
-		_preis = preis;
-		_ui = new BarZahlungsWerkzeugUI();
+	public BarZahlungsWerkzeug(int gesammtBetrag) {
+		_gesammtBetrag = gesammtBetrag;
+		_ui = new BarZahlungsWerkzeugUI( gesammtBetrag);
 	}
 	
 	
