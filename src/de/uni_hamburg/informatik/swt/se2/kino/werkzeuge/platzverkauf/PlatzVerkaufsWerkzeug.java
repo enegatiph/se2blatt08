@@ -10,6 +10,7 @@ import de.uni_hamburg.informatik.swt.se2.kino.fachwerte.Platz;
 import de.uni_hamburg.informatik.swt.se2.kino.materialien.Kinosaal;
 import de.uni_hamburg.informatik.swt.se2.kino.materialien.Vorstellung;
 import de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.SubwerkzeugBeobachter;
+import de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.barzahlung.BarZahlungsWerkzeug;
 
 /**
  * Mit diesem Werkzeug können Plätze verkauft und storniert werden. Es arbeitet
@@ -25,7 +26,8 @@ import de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.SubwerkzeugBeobachter;
 public class PlatzVerkaufsWerkzeug implements SubwerkzeugBeobachter
 {
     private PlatzVerkaufsWerkzeugUI _ui;
-
+    BarZahlungsWerkzeug _barZahlungsWerkzeug;
+    
     // Die aktuelle Vorstellung, deren Plätze angezeigt werden. Kann null sein.
     private Vorstellung _vorstellung;
 
@@ -38,6 +40,9 @@ public class PlatzVerkaufsWerkzeug implements SubwerkzeugBeobachter
         registriereUIAktionen();
         // Am Anfang wird keine Vorstellung angezeigt:
         setVorstellung(null);
+        //TODO move konstructor
+        _barZahlungsWerkzeug = new BarZahlungsWerkzeug(100);//dummy
+        
     }
 
     /**
