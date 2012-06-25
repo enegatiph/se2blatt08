@@ -60,15 +60,48 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 				//reagiereAufOkButton();
 			}
 		});
+		
+		_ui.getAbbrechenButton().addActionListener(new ActionListener() 
+		{
+			
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				//reagiereAufAbbrechenButton();
+			}
+		});
+		
+		_ui.getPreisEingabe().addActionListener(new ActionListener() 
+		{
+			
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				//reagiereAufPreisEingabeAenderung();
+			}
+		});
 	}
-	/* methods
-	    
-		
-		
-		reagiereAufAbbrechenButton() : void
-		reagiereAufOkButton() : void
-		reagiereAufPreisEingabeAenderung() : void
+	
+	private void reagiereAufAbbrechenButton()
+	{
+		_ui.schliesseFenster();
+		// informiere darueber dass die bezahlung nicht statgefunden hat
+	}
+	
+	private void reagiereAufOkButton()
+	{
+		_ui.schliesseFenster();
+		// informiere darueber dass die bezahlung stattgefunden hat
+	}
+	
+	/**
+	 * SOlang der eingebene Preis kleiner als der Gesamtbetrag ist, ist der 
+	 * OK-Button nicht anklickbar
+	 * 
+	 * Restbetrag neubrechenen (gesamtbetrag - eingegebenerbetrag = restbetrag)
 	 */
-	
-	
+	private void reagiereAufPreisEingabeAenderung()
+	{
+		
+	}
 }
