@@ -1,7 +1,7 @@
 package de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.barzahlung;
 
 import java.awt.BorderLayout;
-import java.sql.Date;
+import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
