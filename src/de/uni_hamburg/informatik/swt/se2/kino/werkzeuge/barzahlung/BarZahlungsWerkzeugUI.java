@@ -12,7 +12,8 @@ import javax.swing.JTextField;
  * Kontextwerkzeug wenn die Barzahlung vollzogen ist.
  *
  */
-public class BarZahlungsWerkzeugUI{
+public class BarZahlungsWerkzeugUI 
+{
 
 	private JDialog _dialog;
 	private JButton _ok;
@@ -30,7 +31,8 @@ public class BarZahlungsWerkzeugUI{
 	 * @require gesamtbetrag > 0
 	 * @ensure ?
 	 */
-	public BarZahlungsWerkzeugUI( int gesammtBetrag) {
+	public BarZahlungsWerkzeugUI( int gesammtBetrag) 
+	{
 		assert gesammtBetrag > 0 : "Vorbedingung verletzt bzgl. gesamtbetrag";
 		
 		//TODO layout
@@ -44,33 +46,44 @@ public class BarZahlungsWerkzeugUI{
 	}
 
 
-	public JDialog getDialog() {
+	public JDialog getDialog() 
+	{
 		return _dialog;
 	}
 
 
-	public JButton getOkButton() {
+	public JButton getOkButton() 
+	{
 		return _ok;
 	}
 
 
-	public JButton getAbbrechenButton() {
+	public JButton getAbbrechenButton() 
+	{
 		return _abbrechen;
 	}
 
 
-	public JTextField getPreisEingabe() {
+	public JTextField getPreisEingabe() 
+	{
 		return _preisEingabe;
 	}
 
 
-	public JLabel getPreisGesamtLabel() {
+	public JLabel getPreisGesamtLabel() 
+	{
 		return _preisGesamt;
 	}
 
 
-	public JLabel getPreisRestLabel() {
+	public JLabel getPreisRestLabel() 
+	{
 		return _preisRest;
+	}
+	
+	public void zeigeFenster() 
+	{
+		_dialog.setVisible(true);
 	}
 
 	/* methods
