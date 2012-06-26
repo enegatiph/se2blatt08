@@ -38,7 +38,6 @@ public class PlatzVerkaufsWerkzeug implements SubwerkzeugBeobachter {
 		registriereUIAktionen();
 		// Am Anfang wird keine Vorstellung angezeigt:
 		setVorstellung(null);
-
 	}
 
 	/**
@@ -151,13 +150,16 @@ public class PlatzVerkaufsWerkzeug implements SubwerkzeugBeobachter {
 	/**
 	 * Verkauft die ausgewählten Plaetze.
 	 */
-	private void verkaufePlaetze() {
+	private void verkaufePlaetze() 
+	{
 		// DONE mit barzahlungswerkzeug
 		// DONE korrekten Betrag uebergeben
 		_barZahlungsWerkzeug = new BarZahlungsWerkzeug(
 				_vorstellung.getPreisFuerPlaetze(_ui.getPlatzplan()
 						.getAusgewaehltePlaetze()));
 		
+		_barZahlungsWerkzeug.registriereBeobachter(this);
+		_barZahlungsWerkzeug.zeigeFenster();
 	}
 
 	/**
@@ -172,6 +174,7 @@ public class PlatzVerkaufsWerkzeug implements SubwerkzeugBeobachter {
 	public void informiereUeberAenderung() {
 		if (_barZahlungsWerkzeug.istBarZahlungErfolgt())
 		{
+			System.out.printf("BarZahlung ist Erfolt!!!\n");
 			//verkaufe plaetze
 			Set<Platz> plaetze = _ui.getPlatzplan().getAusgewaehltePlaetze();
 			_vorstellung.verkaufePlaetze(plaetze);

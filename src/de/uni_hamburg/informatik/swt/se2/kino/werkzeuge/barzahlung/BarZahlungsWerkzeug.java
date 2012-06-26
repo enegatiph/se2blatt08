@@ -33,7 +33,7 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 		_ui = new BarZahlungsWerkzeugUI(gesamtBetrag);
 		registriereUIAktionen();
 		_ui.setModal(true);
-		_ui.zeigeFenster();
+		//_ui.zeigeFenster();
 	}
 	
 	/**
@@ -61,6 +61,11 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 		return _istBarzahlungErfolgt;
 	}
 	
+	public void zeigeFenster()
+	{
+		_ui.zeigeFenster();
+	}
+	
 	/**
 	 * Fügt die Funktionalität zu Folgenden UI-Elementen hinzu:
 	 * - OK-Button
@@ -75,7 +80,7 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 			@Override
 			public void actionPerformed(ActionEvent arg0) 
 			{
-				//reagiereAufOkButton();
+				reagiereAufOkButton();
 			}
 		});
 		
@@ -95,7 +100,7 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 			@Override
 			public void removeUpdate(DocumentEvent arg0) 
 			{
-						reagiereAufPreisEingabeAenderung();
+				reagiereAufPreisEingabeAenderung();
 			}
 			
 			@Override
@@ -115,14 +120,14 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 	private void reagiereAufAbbrechenButton()
 	{
 		_ui.schliesseFenster();
-		// informiere darueber dass die bezahlung nicht statgefunden hat
+		informiereAlleBeobachter();
 	}
 	
 	private void reagiereAufOkButton()
 	{
 		_ui.schliesseFenster();
 		_istBarzahlungErfolgt = true;
-		// informiere darueber dass die bezahlung stattgefunden hat
+		informiereAlleBeobachter();
 	}
 	
 	/**
