@@ -1,8 +1,10 @@
 package de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.barzahlung;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.awt.Toolkit;
 import java.sql.Date;
 
 
@@ -19,6 +21,9 @@ import javax.swing.JTextField;
 //TODO fenster zentrieren
 public class BarZahlungsWerkzeugUI 
 {
+	
+	int _frame_heigth = 125;
+	int _frame_width = 300;
 
 	//dialog & panels
 	private JDialog _dialog;
@@ -51,7 +56,15 @@ public class BarZahlungsWerkzeugUI
 		_dialog = new JDialog();
 		_dialog.setTitle("Barzahlung");
 		_dialog.setLayout( new BorderLayout());
-		_dialog.setSize(300, 125);
+		_dialog.setSize(_frame_width, _frame_heigth);
+		_dialog.setResizable(false);
+		
+		//Zentrieren
+         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize(); 
+         int top = (screenSize.height - _frame_heigth) / 2; 
+         int left = (screenSize.width - _frame_width) / 2; 
+	     _dialog.setLocation(left, top);
+		
 		
 		//GesamtPreis
 		_northPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));

@@ -2,8 +2,10 @@ package de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.kasse;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.Toolkit;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -42,7 +44,7 @@ class KassenWerkzeugUI
         _frame = new JFrame("SE2-Kinokartenverkauf");
         _frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         _frame.getContentPane().setLayout(new BorderLayout());
-
+        
         JComponent topPanel = erstelleUeberschriftPanel();
         JComponent leftPanel = erstelleVorstellungsauswahlPanel(
                 datumAuswaehlPanel, vorstellungAuswaehlPanel);
@@ -61,7 +63,15 @@ class KassenWerkzeugUI
      */
     public void zeigeFenster()
     {
+    	int top, left;
         _frame.setSize(1200, 900);
+		
+        //Zentrieren
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize(); 
+        top = (screenSize.height - 900) / 2; 
+        left = (screenSize.width - 1200) / 2; 
+        _frame.setLocation(left, top);
+        
         _frame.setVisible(true);
     }
 
