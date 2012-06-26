@@ -5,8 +5,6 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
-import java.sql.Date;
-
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
