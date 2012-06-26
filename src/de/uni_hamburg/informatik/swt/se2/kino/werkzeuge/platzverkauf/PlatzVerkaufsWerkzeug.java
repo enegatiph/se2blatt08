@@ -174,11 +174,11 @@ public class PlatzVerkaufsWerkzeug implements SubwerkzeugBeobachter {
 	public void informiereUeberAenderung() {
 		if (_barZahlungsWerkzeug.istBarZahlungErfolgt())
 		{
-			System.out.printf("BarZahlung ist Erfolt!!!\n");
 			//verkaufe plaetze
 			Set<Platz> plaetze = _ui.getPlatzplan().getAusgewaehltePlaetze();
 			_vorstellung.verkaufePlaetze(plaetze);
 			aktualisierePlatzplan();
+			_barZahlungsWerkzeug = null;
 		}
 	}
 }
