@@ -176,7 +176,8 @@ public class PlatzVerkaufsWerkzeug implements SubwerkzeugBeobachter
      */
     private void verkaufePlaetze()
     {
-    	//TODO mit barzahlungswerkzeug
+    	//DONE mit barzahlungswerkzeug
+    	// TODO korrekten Betrag uebergeben
     	_barZahlungsWerkzeug = new BarZahlungsWerkzeug(100);
         Set<Platz> plaetze = _ui.getPlatzplan().getAusgewaehltePlaetze();
         _vorstellung.verkaufePlaetze(plaetze);
