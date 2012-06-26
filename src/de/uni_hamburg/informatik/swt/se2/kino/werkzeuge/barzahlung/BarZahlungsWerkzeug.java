@@ -18,10 +18,14 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 
  	BarZahlungsWerkzeugUI _ui;
 	int _gesammtBetrag;
+	int _restBetrag;
+	boolean _istBarzahlungErfolgt;
 	
 	public BarZahlungsWerkzeug(int gesamtBetrag) 
 	{
 		_gesammtBetrag = gesamtBetrag;
+		_restBetrag = 0;
+		_istBarzahlungErfolgt = false;
 		_ui = new BarZahlungsWerkzeugUI(gesamtBetrag);
 		registriereUIAktionen();
 		_ui.setModal(true);
@@ -46,6 +50,11 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 		{
 			return false;
 		}
+	}
+	
+	public boolean istBarZahlungErfolgt()
+	{
+		return _istBarzahlungErfolgt;
 	}
 	
 	/**
@@ -96,6 +105,7 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 	private void reagiereAufOkButton()
 	{
 		_ui.schliesseFenster();
+		_istBarzahlungErfolgt = true;
 		// informiere darueber dass die bezahlung stattgefunden hat
 	}
 	
@@ -104,18 +114,25 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 	 * OK-Button nicht anklickbar
 	 * 
 	 * Restbetrag neubrechenen (gesamtbetrag - eingegebenerbetrag = restbetrag)
+	 * und anzeigen
 	 */
 	private void reagiereAufPreisEingabeAenderung()
 	{
-		int eingegebenerBertrag = Integer.parseInt(_ui.getPreisEingabe().getText());
+		int eingegebenerBetrag = Integer.parseInt(_ui.getPreisEingabe().getText());
 		
-		if(istBarZahlungMoeglich(eingegebenerBertrag) == true)
+		if(istBarZahlungMoeglich(eingegebenerBetrag) == true)
 		{
-			// ok button sichbarmachen
+			_ui.setEnabledOkButton(true);
+			_ui.setPreisRestLabel(0);
 		}
 		else
 		{
-			// restbetrag berechnen und anzeigen
+			_restBetrag = _gesammtBetrag - eingegebenerBetrag;
+			if(_restBetrag < 0)
+			{
+				_restBetrag = 0;
+			}
+			_ui.setPreisRestLabel(_restBetrag);
 		}
 	}
 }
