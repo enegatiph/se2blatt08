@@ -90,6 +90,11 @@ public class BarZahlungsWerkzeugUI
 	{
 		return _ok;
 	}
+	
+	public void setEnabledOkButton(boolean status)
+	{
+		_ok.setEnabled(status);
+	}
 
 
 	public JButton getAbbrechenButton() 
