@@ -77,7 +77,7 @@ public class BarZahlungsWerkzeugUI
 		_dialog.add(_centerPanel, BorderLayout.CENTER);
 
 		//Preis Eingabe + Rest
-		_preisEingabe = new JTextField("Gegeben");
+		_preisEingabe = new JTextField("");
 		_preisRest = new JLabel("Rest: N/A");
 		_dialog.add(_centerPanel, BorderLayout.CENTER);
 		_centerPanel.add(_preisEingabe);
@@ -136,7 +136,7 @@ public class BarZahlungsWerkzeugUI
 	
 	public void setPreisRestLabel(int restBetrag)
 	{
-		_preisRest.setText("" + restBetrag);
+		_preisRest.setText("Rest: " + restBetrag + " Eurocent");
 	}
 	
 	public void zeigeFenster() 

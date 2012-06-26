@@ -95,13 +95,13 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 			@Override
 			public void removeUpdate(DocumentEvent arg0) 
 			{
-				;
+						reagiereAufPreisEingabeAenderung();
 			}
 			
 			@Override
 			public void insertUpdate(DocumentEvent arg0) 
 			{
-				;
+				reagiereAufPreisEingabeAenderung();
 			}
 			
 			@Override
