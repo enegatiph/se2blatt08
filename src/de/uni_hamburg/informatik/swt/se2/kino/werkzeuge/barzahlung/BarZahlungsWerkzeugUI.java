@@ -120,6 +120,11 @@ public class BarZahlungsWerkzeugUI
 		return _preisRest;
 	}
 	
+	public void setPreisRestLabel(int restBetrag)
+	{
+		_preisRest.setText("" + restBetrag);
+	}
+	
 	public void zeigeFenster() 
 	{
 		_dialog.setVisible(true);
