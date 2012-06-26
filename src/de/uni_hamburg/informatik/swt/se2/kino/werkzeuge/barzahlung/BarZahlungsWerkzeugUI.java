@@ -68,7 +68,7 @@ public class BarZahlungsWerkzeugUI
 		
 		//GesamtPreis
 		_northPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-		_preisGesamt = new JLabel( "Zu Zahlen: " + Integer.toString(gesammtBetrag) + "Euro");
+		_preisGesamt = new JLabel( "Zu Zahlen: " + Integer.toString(gesammtBetrag) + "Eurocent");
 		_dialog.add( _northPanel, BorderLayout.NORTH);
 		_northPanel.add( _preisGesamt);
 
