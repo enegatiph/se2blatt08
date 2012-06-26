@@ -19,11 +19,13 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
  	BarZahlungsWerkzeugUI _ui;
 	int _gesammtBetrag;
 	int _restBetrag;
+	boolean _istBarzahlungErfolgt;
 	
 	public BarZahlungsWerkzeug(int gesamtBetrag) 
 	{
 		_gesammtBetrag = gesamtBetrag;
 		_restBetrag = 0;
+		_istBarzahlungErfolgt = false;
 		_ui = new BarZahlungsWerkzeugUI(gesamtBetrag);
 		registriereUIAktionen();
 		_ui.setModal(true);
@@ -48,6 +50,11 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 		{
 			return false;
 		}
+	}
+	
+	public boolean istBarZahlungErfolgt()
+	{
+		return _istBarzahlungErfolgt;
 	}
 	
 	/**
@@ -98,6 +105,7 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 	private void reagiereAufOkButton()
 	{
 		_ui.schliesseFenster();
+		_istBarzahlungErfolgt = true;
 		// informiere darueber dass die bezahlung stattgefunden hat
 	}
 	
