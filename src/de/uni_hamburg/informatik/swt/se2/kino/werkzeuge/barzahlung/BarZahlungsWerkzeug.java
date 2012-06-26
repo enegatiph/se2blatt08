@@ -89,7 +89,8 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 			}
 		});
 		
-		_ui.getPreisEingabe().getDocument().addDocumentListener(new DocumentListener() {
+		_ui.getPreisEingabe().getDocument().addDocumentListener(new DocumentListener() 
+		{
 			
 			@Override
 			public void removeUpdate(DocumentEvent arg0) 
