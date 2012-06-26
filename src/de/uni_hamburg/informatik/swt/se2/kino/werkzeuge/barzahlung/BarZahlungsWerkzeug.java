@@ -2,8 +2,12 @@ package de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.barzahlung;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JButton;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 import de.uni_hamburg.informatik.swt.se2.kino.werkzeuge.BeobachtbaresSubWerkzeug;
 
@@ -85,13 +89,24 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 			}
 		});
 		
-		_ui.getPreisEingabe().addActionListener(new ActionListener() 
-		{
+		_ui.getPreisEingabe().getDocument().addDocumentListener(new DocumentListener() {
 			
 			@Override
-			public void actionPerformed(ActionEvent e) 
+			public void removeUpdate(DocumentEvent arg0) 
 			{
-				//reagiereAufPreisEingabeAenderung();
+				;
+			}
+			
+			@Override
+			public void insertUpdate(DocumentEvent arg0) 
+			{
+				;
+			}
+			
+			@Override
+			public void changedUpdate(DocumentEvent arg0) 
+			{
+				reagiereAufPreisEingabeAenderung();
 			}
 		});
 	}
