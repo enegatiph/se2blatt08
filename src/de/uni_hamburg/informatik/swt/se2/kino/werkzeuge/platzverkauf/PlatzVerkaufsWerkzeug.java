@@ -153,14 +153,11 @@ public class PlatzVerkaufsWerkzeug implements SubwerkzeugBeobachter {
 	 */
 	private void verkaufePlaetze() {
 		// DONE mit barzahlungswerkzeug
-		// TODO korrekten Betrag uebergeben
+		// DONE korrekten Betrag uebergeben
 		_barZahlungsWerkzeug = new BarZahlungsWerkzeug(
 				_vorstellung.getPreisFuerPlaetze(_ui.getPlatzplan()
 						.getAusgewaehltePlaetze()));
 		
-		Set<Platz> plaetze = _ui.getPlatzplan().getAusgewaehltePlaetze();
-		_vorstellung.verkaufePlaetze(plaetze);
-		aktualisierePlatzplan();
 	}
 
 	/**
@@ -173,6 +170,12 @@ public class PlatzVerkaufsWerkzeug implements SubwerkzeugBeobachter {
 	}
 
 	public void informiereUeberAenderung() {
-		// TODO inhalt
+		if (_barZahlungsWerkzeug.istBarZahlungErfolgt())
+		{
+			//verkaufe plaetze
+			Set<Platz> plaetze = _ui.getPlatzplan().getAusgewaehltePlaetze();
+			_vorstellung.verkaufePlaetze(plaetze);
+			aktualisierePlatzplan();
+		}
 	}
 }
