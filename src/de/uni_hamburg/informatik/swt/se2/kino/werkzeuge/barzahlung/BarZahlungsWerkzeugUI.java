@@ -16,6 +16,7 @@ import javax.swing.JTextField;
  * 
  * das UI des {@link BarZahlungsWerkzeugs}
  */
+//TODO fenster zentrieren
 public class BarZahlungsWerkzeugUI 
 {
 
