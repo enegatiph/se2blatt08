@@ -136,7 +136,10 @@ public class BarZahlungsWerkzeugUI
 	
 	public void setPreisRestLabel(int restBetrag)
 	{
+		if ( restBetrag > 0)
 		_preisRest.setText("Rest: " + restBetrag + " Eurocent");
+		else
+		_preisRest.setText("Rest: N/A");
 	}
 	
 	public void zeigeFenster() 

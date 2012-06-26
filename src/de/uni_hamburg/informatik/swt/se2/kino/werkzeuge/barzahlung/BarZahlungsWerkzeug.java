@@ -146,14 +146,8 @@ public class BarZahlungsWerkzeug extends BeobachtbaresSubWerkzeug {
 			_ui.setEnabledOkButton(true);
 			_ui.setPreisRestLabel(0);
 		}
-		else
-		{
-			_restBetrag = _gesammtBetrag - eingegebenerBetrag;
-			if(_restBetrag < 0)
-			{
-				_restBetrag = 0;
-			}
+			_restBetrag =  eingegebenerBetrag - _gesammtBetrag;
+			_restBetrag = ( _restBetrag < 0) ? 0 : _restBetrag;
 			_ui.setPreisRestLabel(_restBetrag);
-		}
 	}
 }
